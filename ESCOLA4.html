@@ -1,0 +1,992 @@
+<html lang="en">
+  <head>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.1/css/bootstrap.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <title>Escola</title>    
+</head>
+  <style>
+    /* search top */
+section.searchTop { background-color: #04ADBF; padding: 0.5rem 0; }
+section.searchTop .btn-default { background-color: #0D19A3; }
+section.searchTop .btn-default { border-top-right-radius: 0.75rem; border-bottom-right-radius: 0.75rem; }
+section.searchTop .input-group-btn::after { color: #fff; content: "\f002"; font-family: FontAwesome; font-size: 1.2rem; position: absolute; top: 10%; left: 95.7%; pointer-events: none;
+}
+section.searchTop .invisible { font-size: 0.3rem; }
+section.searchTop label { color: #fff; font-size: 1.12rem; line-height: 1.37rem; margin: 0.5rem 3rem 0 0; }
+section.searchTop .navbar a { color: #1D1D1B; }
+section.searchTop .searchBar .navbar { padding: 0; }
+
+/* header */
+header .row { background-color: #585958; } 
+header a img { margin: 0 8px 0 0; height: 58px; width: 38px; }
+header .siteTitle a { float: left; font-size: 36px; color: #fff; padding-top: 5px; padding-bottom: 5px; }
+
+/* topnav */
+section.topNav .divider {
+    min-height: 0.5rem;
+    background-color: #0D19A3;
+}
+
+section.topNav .navbar {
+    padding: 0;
+    background-color: #0D19A3;
+}
+
+section.topNav .navbar {
+    border-bottom-left-radius: 0.75rem;
+    border-bottom-right-radius: 0.75rem;
+}
+
+    section.topNav .navbar a {
+        color: #fff;
+    }
+
+        section.topNav .navbar a:hover {
+            color: #ff0;
+        }
+
+        section.topNav .navbar a.dropdown-item {
+            color: #1D1D1B;
+        }
+
+    section.topNav .navbar .navbar-toggler {
+        text-align: right;
+        color: #fff;
+    }
+
+section.topNav .navbar-nav {
+    text-align: center;
+}
+
+    section.topNav .navbar-nav .nav-link {
+        color: #fff;
+    }
+
+section.topNav .navbar-brand {
+    display: none;
+}
+
+section.topNav .nav-item {
+    margin-top: -0.5rem;
+    min-width: 6rem;
+    max-width: 12rem;
+}
+
+    section.topNav .nav-item.wide {
+        margin-top: -0.5rem;
+        max-width: 12rem;
+        min-width: 10rem;
+    } 
+
+    section.topNav .nav-item.dropdown.show {
+        background-color: #E8E8E8;
+    }
+
+        section.topNav .nav-item.dropdown.show a {
+            color: #0D19A3;
+        }
+
+section.topNav .dropdown-menu {
+    margin: 0;
+    background-color: #E8E8E8;
+    border-width: 0;
+    border-bottom-right-radius: 1rem;
+    border-top-left-radius: 0rem;
+    border-top-right-radius: 0rem;
+    border-bottom-left-radius: 0rem;
+    min-width: 15rem;
+}
+
+section.topNav .dropdown-item {
+    padding: 0.25rem 1rem;
+}
+
+    section.topNav .dropdown-item:hover, .dropdown-item:focus {
+        background: none;
+    }
+
+section.topNav .dropdown-divider {
+    border-top: 1px solid #2A3034;
+    margin: 0.25rem 1rem;
+}
+
+    section.topNav .dropdown-divider.last {
+        border: none;
+    }
+
+section.topNav nav.navbar-expand-lg .navbar-nav .nav-item .nav-link {
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+@media screen and (min-width:992px) {
+    .navbar-expand-lg .navbar-nav .nav-item.first .nav-link {
+        padding-left: 0;
+    }
+}
+
+@media screen and (max-width:991.98px) {
+    .navbar-expand-lg .navbar-nav .nav-item .nav-link {
+        padding-left: 1rem;
+    }
+
+    .navbar-expand-lg .navbar-nav .navbar-brand {
+        padding-left: 1rem;
+    }
+
+    .navbar-dark .navbar-toggler {
+        border: none;
+    }
+
+    section.topNav .navbar-brand {
+        padding-left: 1rem;
+        display: block;
+    }
+
+    section.topNav .navbar-nav {
+        text-align: left;
+    }
+
+    section.topNav .nav-item {
+        max-width: 100%;
+    }
+
+        section.topNav .nav-item.wide {
+            max-width: 100%;
+        }
+}
+
+/* footernav */
+section.footerNav .divider { min-height: 0.5rem; background-color: #E8E8E8; } 
+section.footerNav .divider.bottom { min-height: 0.5rem; background-color: #04ADBF; } 
+section.footerNav .navbar { padding: 0; background-color: #E8E8E8; } 
+section.footerNav .navbar { border-top-left-radius: 0.75rem; border-top-right-radius: 0.75rem; } 
+section.footerNav .navbar-nav .nav-link { color: #1A091E; text-decoration: underline; } 
+
+/* breadcrumbs */
+nav.breadcrumbs { margin-top: 12px; margin-bottom: 12px; }
+nav.breadcrumbs ul { list-style-type: none; display: inline; margin: 0; padding: 0; }
+nav.breadcrumbs li { display: inline; }
+nav.breadcrumbs li a { color: #585958; font-size: 1.14em; line-height: 24px; }
+
+/* site */
+/* main content */
+html, body {
+    font-family: "proxima-nova", sans-serif;
+}
+
+h1 {
+    font-family: "mr-eaves-xl-modern", sans-serif;
+    color: #0D19A3;
+    font-size: 3.5625rem;
+    font-weight: 300;
+    margin-top: 1rem;
+    margin-bottom: 1.1rem;
+}
+
+main { 
+    margin-top: 1rem; 
+    font-size: 1.125rem;
+    line-height: 1.375rem;
+    color: #1D1D1B;
+}
+
+    main p, main a {
+        color: #1D1D1B;
+    }
+
+    main strong {
+        font-weight: 600;
+    }
+
+blockquote {
+    margin: 2rem 0rem;
+    background-color: #04adbf;
+    padding: 1rem 2.5rem;
+    text-align: center;
+    font-size: 1.875rem;
+    line-height: 2.3125rem;
+}
+
+article.pageContent p {
+    margin: 0 0 0.5rem 0;
+}
+
+article.pageContent p.card-title {
+    margin: 0;
+    font-size: 1.25rem;
+}
+
+article.pageContent p.card-title a {
+    text-decoration: none;
+}
+
+article.pageContent p.card-title a:hover {
+    text-decoration: underline;
+}
+
+article .sideImage {
+    width: 100%;
+    margin: 0 0 1rem 0;
+}
+
+article .logo {
+    margin-bottom: 1.25rem;
+}
+
+.umb-grid > .grid-section > div > div.container {
+    padding-left: 0;
+    padding-right:0;
+}
+
+/* Contact panel */
+.sidePanel {
+    background-color: #eef0f0;
+    border: 0 solid #7d7d7d;
+    padding: 10px 20px 10px;
+    margin-bottom: 20px;
+    float: left;
+    width: 100%;
+}
+
+.sidePanel h1 {
+    color: #b60011;
+    font-size: 22px;
+    font-family: proxima-nova,sans-serif;
+    font-weight: 700;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+#contacts ul {
+    padding: 0;
+    list-style-type: none;
+    margin: 10px 0;
+}
+
+/* cards */
+.card {
+    margin-bottom: 1rem;
+    background-color: #EEF0F0;
+    border-width: 0
+}
+
+    .card.imageTile {
+        background-color: #EEF0F0;
+        border-width: 0;
+        border-bottom-right-radius: 1rem !important;
+    }
+
+    .card img { 
+        width: 100%; 
+    }
+
+    .card a {
+        text-decoration: underline;
+    }
+
+    .card.yellow { 
+        background-color: #f0e541; 
+    }
+
+    .card.aqua {
+        background-color: #04adbf;
+    }
+    
+    .card.leftBorder {
+        border-style: solid;
+        border-width: 0;
+        border-left-width: 8px;
+        text-align: center;
+    }
+
+        .card.leftBorder.red {
+            border-left-color: #B60011;
+        }
+
+        .card.leftBorder.yellow {
+            border-left-color: #FFBF01;
+        }
+
+        .card.leftBorder.blue {
+            border-left-color: #0049AF;
+        }
+
+    .card .card-header {
+        background-color: #0d19a3;
+        color: #fff;
+        border-bottom-right-radius: 1rem;
+        font-weight: 600;
+    }
+
+    .card.blue .card-header {
+        background-color: #0d19a3;
+        color: #fff;
+    }
+
+    .card.orange .card-header {
+        background-color: #FB5536;
+        color: #fff;
+    }
+
+.card.green .card-header {
+    background-color: #01942A;
+    color: #fff;
+}
+
+    .card.purple .card-header {
+        background-color: #8F248C;
+        color: #fff;
+    }
+
+.card-title {
+    margin-bottom: 0.5rem;
+}
+
+.card .card-text strong {
+    color: #0d19a3;
+}
+.card.blue .card-text strong {
+    color: #0d19a3;
+}
+.card.orange .card-text strong {
+    color: #FB5536;
+}
+.card.green .card-text strong {
+    color: #01942A;
+}
+.card.purple .card-text strong {
+    color: #8F248C;
+}
+
+.card-footer {
+    border: none;
+    background: none;
+    padding: 0;
+    margin: 0;
+}
+
+.card .card-footer a {
+    background-color: #0d19a3;
+}
+.card.blue .card-footer a {
+    background-color: #0d19a3;
+}
+.card.orange .card-footer a {
+    background-color: #FB5536;
+}
+
+.card.green .card-footer a {
+    background-color: #01942A;
+}
+
+.card.purple .card-footer a {
+    background-color: #8F248C;
+}
+
+.card .card-footer a {
+    color: #fff;
+    text-decoration: none;
+    border-bottom: 0;
+    border: 0;
+    padding: 0.25rem 0.25rem 0.25rem 1rem;
+    min-width: 125px;
+    margin: 1rem 1rem 0 0;
+    font-weight: 600;
+    text-align: left;
+    white-space: nowrap;
+    display: inline-block;
+    vertical-align: middle;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-image: none;
+    border-radius: 1rem;
+}
+
+    .card .card-footer a:hover {
+        text-decoration: underline;
+    }
+
+/* side nav */
+nav.sideNavigation {
+    background-color: #E8E8E8;
+}
+
+    nav.sideNavigation a {
+        color: #1D1D1B;
+        font-weight:600;
+    }
+
+    nav.sideNavigation ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+    }
+
+        nav.sideNavigation ul li.leftBorder.current {
+            background-color: #04ADBF;
+        }
+
+        nav.sideNavigation ul li.leftBorder {
+            border-style: solid;
+            border-width: 0;
+            border-left-width: 0.313rem;
+            padding: 0.75rem 0.5rem 0.75rem 1rem;
+            border-left-color: #04ADBF;
+        }
+
+    nav.sideNavigation .dropdown-divider {
+        margin: 0.15rem 0;
+        border-top-color: #2A3034;
+    }
+
+    nav.sideNavigation .sideNavigationHeading {
+        background-color: #2A3034;
+        color: #FFFFFF;
+        padding: 0.75rem 1.5rem;
+        border-top-left-radius: 0.75rem;
+        border-top-right-radius: 0.75rem;
+        margin-bottom: 0.15rem;
+    }
+
+
+
+/* Gov: Our sites */
+section.ourSites {
+    margin-top: 0px;
+    background-color: #585958;
+    color: #fff;
+    padding: 10px 0 10px 0;
+}
+section.ourSites div.title {
+    width: 110px;
+    float: left;
+    font-weight: 700;
+    font-size: 22px;
+    line-height: 25px;
+}
+@media all and (min-width:768px){
+section.ourSites div.links {
+    width: calc(-110px + 100%);
+    float: left;
+}
+}
+section.ourSites {
+    margin-top: 0px;
+    background-color: #585958;
+    color: #fff;
+    padding: 10px 0 10px 0;
+}
+section.ourSites ul {
+    list-style-type: none;
+    display: inline;
+    margin: 0;
+    padding: 0;
+}
+section.ourSites ul li {
+    display: inline-block;
+    padding: 0 18px;
+    margin-bottom: 5px;
+    border-left: solid 1px #fff;
+}
+section.ourSites ul a {
+    color: #fff;
+    text-decoration: underline;
+    font-family: proxima-nova,sans-serif;
+    font-size: 16px;
+}
+/* Gov: footer */
+@media all and (min-width:480px){
+footer {
+    padding-bottom: 30px;
+}
+}
+footer {
+    background-color: #e0e0e0;
+    width: 100%;
+    padding: 15px 0 30px 0;
+}
+footer dl#socialMedia {
+    padding-bottom: 10px;
+    margin-bottom: 0px;
+}
+footer dl#socialMedia dt {
+    display: inline-block;
+    padding-right: 10px;
+    padding-top: 4px;
+    font-size: 22px;
+    font-family: proxima-nova,sans-serif;
+    font-weight: 700;
+    vertical-align: top;
+}
+footer dl#socialMedia dd {
+    display: inline-block;
+    padding: 0 5px 10px 5px;
+}
+dd {
+    margin-bottom: 0.5rem;
+    margin-left: 0px;
+}
+.fa-stack {
+    position: relative;
+    display: inline-block;
+    width: 2em;
+    height: 2em;
+    line-height: 2em;
+    vertical-align: middle;
+}
+footer dl#socialMedia dd a .fa-circle {
+    color: #7d7d7d;
+}
+.fa-stack-2x {
+    font-size: 2em;
+}
+.fa-stack-1x, .fa-stack-2x {
+    position: absolute;
+    left: 0px;
+    width: 100%;
+    text-align: center;
+}
+.fa {
+    display: inline-block;
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+.fa-inverse {
+    color: #fff;
+}
+#accessibility, .accessibility {
+    position: absolute;
+    left: -999em;
+}
+footer ul.footerLinks {
+    list-style-type: none;
+    display: inline;
+    margin: 0;
+    padding: 0;
+}
+footer ul.footerLinks li {
+    display: inline;
+    padding-right: 16px;
+}
+footer ul.footerLinks a:visited {
+    color: #1d1d1b;
+}
+footer ul.footerLinks a {
+    color: #1d1d1b;
+    text-decoration: underline;
+    font-size: 1.em;
+}
+
+  </style>
+  <body>
+    <header>
+      <div class="row no-gutters">
+        <div class="col-12">
+          <div class="container siteTitle">
+            <a title="govje home" href="/Pages/default.aspx">
+              <img alt="Government of Jersey" src="https://govje.azureedge.net/images/Gov-Jersey-Crest.svg">learningathome<strong>.gov.je</strong></a>
+          </div>
+        </div>
+      </div>
+    </header>
+    <section class="searchTop">
+      <div class="row no-gutters">
+        <div class="col-12">
+          <div class="container searchBar">
+            <div class="row">
+              <div class="col-12 col-md-8">
+                <div class="input-group">
+                  <label for="siteSearch">Search this site</label>
+                  <input name="query" class="form-control searchBox" id="siteSearch" type="text">
+                  <span class="input-group-btn">
+                    <button class="btn btn-default" type="submit" value="Search"><span class="invisible">Search</span></button>
+                  </span>
+                </div>
+              </div>
+              <div class="col-12 col-md-4">
+                <nav class="navbar navbar-expand-md float-right">
+                    <div>
+                      <ul class="navbar-nav">
+                        <li class="nav-item">
+                          <a class="nav-link" href="#">Contact</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="#">Translate</a>
+                        </li>
+                      </ul>
+                    </div>
+                </nav>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="topNav sticky-top">
+      <div class="row no-gutters">
+         <div class="col-12">
+           <div class="divider">
+           </div>
+        </div>
+      </div>
+      <div class="row no-gutters">
+        <div class="col-12">
+          <div class="container">
+            <nav class="navbar navbar-expand-lg navbar-dark">
+              <div class="container">
+                <a class="navbar-brand" href="#">Learning at home</a>
+                <button class="navbar-toggler collapsed" aria-expanded="false" aria-controls="navbarNav" aria-label="Toggle navigation" type="button" data-target="#navbarNav" data-toggle="collapse">
+                  Menu <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse" id="navbarNav">
+                  <ul class="navbar-nav">
+                    <li class="nav-item">
+                      <a class="nav-link" href="/news/">News</a>
+                    </li>
+                    <li class="nav-item dropdown wide">
+                      <a class="nav-link dropdown-toggle " href="/safety-health-and-wellbeing/" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Safety, Health and Wellbeing
+                      </a>
+                      <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <a class="dropdown-item" href="/safety-health-and-wellbeing/">Safety, Health and Wellbeing section</a>
+                        <div class="dropdown-divider last"></div>
+                        <a class="dropdown-item" href="/safety-health-and-wellbeing/guide-for-parents/">Guide for parents</a>
+                        <div class="dropdown-divider last"></div>
+                      </div>
+                    </li>
+                    <li class="nav-item dropdown wide">
+                      <a class="nav-link dropdown-toggle " href="/special-education-needs/" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Special Education Needs
+                      </a>
+                      <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <a class="dropdown-item" href="/special-education-needs/">Special Education Needs section</a>
+                        <div class="dropdown-divider last"></div>
+                        <a class="dropdown-item" href="/special-education-needs/learning-resources/">Learning Resources</a>
+                        <div class="dropdown-divider last"></div>
+                      </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                      <a class="nav-link dropdown-toggle " href="/3-to-5-year-olds/" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        3 to 5 year olds
+                      </a>
+                      <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <a class="dropdown-item" href="/3-to-5-year-olds/">3 to 5 year olds section</a>
+                        <div class="dropdown-divider last"></div>
+                        <a class="dropdown-item" href="/3-to-5-year-olds/guide-for-parents/">Guide for parents</a>
+                        <div class="dropdown-divider last"></div>
+                      </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                      <a class="nav-link dropdown-toggle " href="/5-to-11-year-olds/" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        5 to 11 year olds
+                      </a>
+                      <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <a class="dropdown-item" href="/5-to-11-year-olds/">5 to 11 year olds section</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="/5-to-11-year-olds/guide-for-parents/">Guide for parents</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="/5-to-11-year-olds/learning-resources/">Learning resources</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="/5-to-11-year-olds/having-fun-together/">Having fun together</a>
+                        <div class="dropdown-divider last"></div>
+                      </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                      <a class="nav-link dropdown-toggle " href="/11-to-14-year-olds/" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        11 to 14 year olds
+                      </a>
+                      <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <a class="dropdown-item" href="/11-to-14-year-olds/">11 to 14 year olds section</a>
+                        <div class="dropdown-divider last"></div>
+                        <a class="dropdown-item" href="/11-to-14-year-olds/guide-for-parents/">Guide for parents</a>
+                        <div class="dropdown-divider last"></div>
+                      </div>
+                    </li>
+                    <li class="nav-item dropdown wide">
+                      <a class="nav-link dropdown-toggle " href="/14-year-olds-and-above/" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        14 year olds and above
+                      </a>
+                      <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <a class="dropdown-item" href="/14-year-olds-and-above/">14 year olds and above section</a>
+                        <div class="dropdown-divider last"></div>
+                        <a class="dropdown-item" href="/14-year-olds-and-above/guide-for-parents/">Guide for parents</a>
+                        <div class="dropdown-divider last"></div>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </section>
+    <nav class="breadcrumbs">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <ul class="noindex">
+              <li><a title="home" href="/">Home</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <main role="main">
+        <article class="pageContent">
+            <div class="container">
+                
+
+<div class="row">
+<div class="col-12">
+
+    <div class="umb-grid">
+                <div class="grid-section">
+    <div class="mb-4">
+        <div class="container">
+        <div class="row">
+            <div class="col-lg-4 column">
+                <div class="text-center">
+                            
+    
+    <img src="https://labtest.gov.je/SiteAssets/learning_at_home_logo2.png" alt="">
+
+
+                </div>
+            </div>            <div class="col-lg-8 column">
+                <div>
+                            
+    
+    
+        <h1>Learning at home</h1>
+    
+
+
+                            
+    
+<p><strong>Welcome to the website to help you to help your child during school closure. </strong></p>
+<p><span>In response to your answers to the recent survey, this website focusses on those areas that most concern you and your child. </span></p>
+<p><span>No-one expects you to replace your child’s teacher; our schools will manage their learning. Just seek a balance between learning at home, working from home, running your home and having fun!</span></p>
+
+
+                </div>
+            </div>        </div>
+        </div>
+    </div>
+    <div>
+        <div class="container">
+        <div class="row">
+            <div class="col-lg-4 column">
+                <div>
+                            
+    
+
+    
+        <div class="card rounded-0 imageTile aqua">
+        <img alt="Card Image Sample" src="https://labtest.gov.je/SiteAssets/home_main_right.png">
+    <div class="card-body p-3">
+        <p class="card-title">
+                    <a title="About Learning At Home" href="/about/">About Learning At Home</a>
+        </p>
+    </div>
+</div>
+    
+
+
+                </div>
+            </div>            <div class="col-lg-4 column">
+                <div>
+                            
+    
+
+    
+        <div class="card rounded-0 imageTile aqua">
+        <img alt="Card Image Sample" src="https://labtest.gov.je/SiteAssets/home_main_right.png">
+    <div class="card-body p-3">
+        <p class="card-title">
+Parents as partners        </p>
+    </div>
+</div>
+    
+
+
+                </div>
+            </div>            <div class="col-lg-4 column">
+                <div>
+                            
+    
+
+    
+        <div class="card rounded-0 imageTile aqua">
+        <img alt="Card Image Sample" src="https://labtest.gov.je/SiteAssets/home_main_right.png">
+    <div class="card-body p-3">
+        <p class="card-title">
+Digital safety        </p>
+    </div>
+</div>
+    
+
+
+                </div>
+            </div>        </div>
+        </div>
+    </div>
+    <div>
+        <div class="container">
+        <div class="row">
+            <div class="col-lg-4 column">
+                <div>
+                            
+    
+
+    
+        <div class="card border-light rounded-0 blue">
+    <div class="card-header px-3">3 to 5 year olds</div>
+    <div class="card-body p-3">
+            <p class="card-text">
+                <strong>Early Years Foundation Stage pages for families and carers of children aged between 3 and 5</strong>
+            </p>
+                            <p class="card-footer mt-3">
+                <a class="btn btn-primary" href="/3-to-5-year-olds/">Read more<i class="fa fa-arrow-right fa-fw mx-2"></i></a>
+            </p>
+    </div>
+</div>
+    
+
+
+                </div>
+            </div>            <div class="col-lg-4 column">
+                <div>
+                            
+    
+
+    
+        <div class="card border-light rounded-0 blue">
+    <div class="card-header px-3">5 to 11 year olds</div>
+    <div class="card-body p-3">
+            <p class="card-text">
+                <strong>Primary School page for families and carers of young people  learning in years 1 - 6</strong>
+            </p>
+                            <p class="card-footer mt-3">
+                <a class="btn btn-primary" href="/5-to-11-year-olds/">Read more<i class="fa fa-arrow-right fa-fw mx-2"></i></a>
+            </p>
+    </div>
+</div>
+    
+
+
+                </div>
+            </div>            <div class="col-lg-4 column">
+                <div>
+                            
+    
+
+    
+        <div class="card border-light rounded-0 blue">
+    <div class="card-header px-3">11 to 14 year olds</div>
+    <div class="card-body p-3">
+            <p class="card-text">
+                <strong>Secondary School page for the families and carers of young people learning in years 7 - 9</strong>
+            </p>
+                            <p class="card-footer mt-3">
+                <a class="btn btn-primary" href="/11-to-14-year-olds/">Read more<i class="fa fa-arrow-right fa-fw mx-2"></i></a>
+            </p>
+    </div>
+</div>
+    
+
+
+                </div>
+            </div>        </div>
+        </div>
+    </div>
+                </div>
+    </div>
+
+
+</div>
+</div>
+            </div>
+        </article>
+    </main>
+    <section class="footerNav">
+      <div class="row no-gutters">
+        <div class="col-12">
+          <div class="container">
+            <nav class="navbar navbar-expand-md navbar-dark">
+              <div class="container">
+                <div class="collapse navbar-collapse" id="navbarNavFooter">
+                <ul class="navbar-nav">
+                  <li class="nav-item first">
+                    <a class="nav-link" href="#">Lorem ipsum</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Dolor sit amet</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Contact</a>
+                  </li>
+                </ul>
+                </div>
+              </div>
+            </nav>
+          </div>
+        </div>
+      </div>
+      <div class="row no-gutters">
+         <div class="col-12">
+           <div class="divider">
+           </div>
+        </div>
+      </div>
+      <div class="row no-gutters">
+         <div class="col-12">
+           <div class="divider bottom">
+           </div>
+        </div>
+      </div>
+    </section>
+    <section class="ourSites">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 noindex">
+                <div class="title">Our sites</div><div class="links"><ul><li><a title="Blog opens in new window" href="https://blog.gov.je/" target="_blank">Blog</a></li><li><a title="Culture Jersey opens in new window" href="https://culture.je/" target="_blank">Culture Jersey</a></li><li><a title="Digital Jersey opens in new window" href="https://www.digital.je/global/" target="_blank">Digital Jersey</a></li><li><a title="Jersey Business opens in new window" href="https://www.jerseybusiness.je/" target="_blank">Jersey Business</a></li><li><a title="Jersey Finance opens in new window" href="https://www.jerseyfinance.je/" target="_blank">Jersey Finance</a></li><li><a title="Jersey Law opens in new window" href="https://www.jerseylaw.je/Pages/default.aspx" target="_blank">Jersey Law</a></li><li><a title="Jersey Sport opens in new window" href="https://www.jerseysport.je/" target="_blank">Jersey Sport</a></li><li><a title="Locate Jersey opens in new window" href="https://www.locatejersey.com/" target="_blank">Locate Jersey</a></li><li><a title="m.gov.je opens in new window" href="https://m.gov.je/" target="_blank">m.gov.je</a></li><li><a title="Open Data opens in new window" href="https://opendata.gov.je/" target="_blank">Open Data</a></li><li><a title="Parishes opens in new window" href="https://parish.gov.je/" target="_blank">Parishes</a></li><li><a title="Petitions opens in new window" href="https://petitions.gov.je/" target="_blank">Petitions</a></li><li><a title="States Assembly opens in new window" href="https://statesassembly.gov.je/" target="_blank">States Assembly</a></li><li><a title="Visit Jersey opens in new window" href="https://www.jersey.com/" target="_blank">Visit Jersey</a></li></ul></div>
+            </div>
+        </div>
+    </div>
+</section>
+    <footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <dl id="socialMedia"><dt>Find us on social media</dt><dd>
+   <a title="Twitter opens in new window" class="noindex" href="https://twitter.com/govjersey" target="_blank"><span class="fa-stack fa-lg"><span class="fa fa-circle fa-stack-2x"></span><span class="fa fa-twitter fa-stack-1x fa-inverse"></span> </span><span class="accessibility">Twitter opens in new window</span> </a> </dd><dd>
+   <a title="Facebook opens in new window" class="noindex" href="https://www.facebook.com/GovernmentofJersey" target="_blank"><span class="fa-stack fa-lg"><span class="fa fa-circle fa-stack-2x"></span><span class="fa fa-facebook fa-stack-1x fa-inverse"></span> </span><span class="accessibility">Facebook opens in new window</span> </a> </dd><dd>
+   <a title="LinkedIn opens in new window" class="noindex" href="https://www.linkedin.com/company/government-of-jersey" target="_blank"><span class="fa-stack fa-lg"><span class="fa fa-circle fa-stack-2x"></span><span class="fa fa-linkedin fa-stack-1x fa-inverse"></span> </span><span class="accessibility">LinkedIn opens in new window</span> </a> </dd><dd>
+   <a title="Instagram opens in new window" class="noindex" href="https://www.instagram.com/governmentofjersey" target="_blank"><span class="fa-stack fa-lg"><span class="fa fa-circle fa-stack-2x"></span><span class="fa fa-instagram fa-stack-1x fa-inverse"></span> </span><span class="accessibility">Instagram opens in new window</span> </a> </dd><dd>
+   <a title="YouTube opens in new window" class="noindex" href="https://www.youtube.com/governmentofjersey" target="_blank"><span class="fa-stack fa-lg"><span class="fa fa-circle fa-stack-2x"></span><span class="fa fa-youtube-play fa-stack-1x fa-inverse"></span> </span><span class="accessibility">YouTube opens in new window</span> </a> </dd></dl>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <ul class="footerLinks"><li><a href="/Pages/Accessibility.aspx">Accessibility</a></li><li><a href="https://one.gov.je/service/contact_us">Contact us</a></li><li><a href="/Pages/Privacy.aspx">Privacy</a></li><li><a href="/Pages/Terms.aspx">Terms and conditions</a></li><li><a href="/Pages/Sitemap.aspx">Sitemap</a></li><li><a href="/Pages/TranslateSite.aspx">Translate</a></li><li class="right">© States of Jersey 2010 - 2020</li></ul>
+            </div>
+        </div>
+    </div>
+</footer>
+        
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/js/bootstrap.min.js"></script>
+  </body>
+</html>
